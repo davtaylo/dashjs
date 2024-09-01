@@ -1,12 +1,12 @@
 'use strict';
 const fs = require('fs');
-const upath = require('upath');
+const upath = require('@ewizardjs/upath');
 const pug = require('pug');
 const sh = require('shelljs');
 const prettier = require('prettier');
 
 module.exports = async function renderPug(filePath) {
-    const destPath = filePath.replace(/src\/pug\/\pages/, 'dist').replace(/\.pug$/, '.html');
+    const destPath = filePath.replace(/src\/pug\/pages/, 'dist').replace(/\.pug$/, '.html');
     const srcPath = upath.resolve(upath.dirname(__filename), '../src');
 
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);
